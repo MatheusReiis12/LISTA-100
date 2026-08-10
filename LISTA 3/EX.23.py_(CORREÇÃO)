@@ -1,0 +1,22 @@
+def numeros_primos_1_N():
+    x = int(input("DIGITE UM NÚMERO:"))
+    lista = []
+    contador_divisoes = 0
+
+    for i in range(1, x + 1):
+        divisores_encontrados = 0    # começa em zero, sem "culpados" ainda
+
+        for j in range(2, i):        # testamos os divisores de 2 até i-1
+            contador_divisoes = contador_divisoes + 1   # cada teste conta como uma divisão
+
+            if i % j == 0:            # se dividiu certinho (sem sobrar resto)...
+                divisores_encontrados = divisores_encontrados + 1   # ...achamos mais um "culpado"
+
+        if divisores_encontrados == 0 and i > 1:    # se não achou NENHUM culpado e não é o 1
+            lista.append(i)
+
+    print("Números primos entre 1 e", x, ":", lista)
+    print("Quantidade de primos encontrados:", len(lista))
+    print("Número de divisões (testes) executados:", contador_divisoes)
+
+numeros_primos_1_N()
