@@ -12,7 +12,7 @@ def fatorial_print():
 
     print(f"{x}! = ", end="")
 
-    print(*lista, sep=" . " " = ", fatorial)
+
 
 
 fatorial_print()
